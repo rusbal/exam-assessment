@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
-use App\Http\Resources\Employees;
+use App\Http\Resources\Employee as EmployeeResource;
+use App\Http\Resources\EmployeeCollection;
 use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
 {
+    public function index()
+    {
+        $employees = new EmployeeCollection(Employee::all());
+        return response()->json($employees, 200);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -28,12 +35,12 @@ class EmployeesController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \App\Http\Resources\Employees
+     * @return \App\Http\Resources\Employee
      */
     public function show($id)
     {
         $company = Employee::find($id);
-        return new Employees($company);
+        return new EmployeeResource($company);
     }
 
     /**

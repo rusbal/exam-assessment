@@ -41,7 +41,7 @@ class CompanyTest extends TestCase
         $employees = factory(Employee::class, 2)->create();
         Company::find($row->id)->employees()->attach($employees);
 
-        $this->json('GET', '/api/companies/'.$row->id)
+        $this->json('GET', '/api/companies/'.$row->id, $this->getAuth())
             ->assertStatus(200)
             ->assertJson(['data' => [
                 'id' => $row->id,
@@ -56,6 +56,17 @@ class CompanyTest extends TestCase
         $this->json('DELETE', '/api/companies/'.$row->id, [], $this->getAuth())
             ->assertStatus(204);
         $this->assertEquals(0, Company::count());
+    }
+
+    public function testCanViewAll()
+    {
+        $count = 2;
+        $companies = factory(Company::class, $count)->create();
+        $this->json('GET', '/api/companies', [], $this->getAuth())
+            ->assertStatus(200)
+            ->assertJsonFragment([ 'name' => $companies[0]->name ])
+            ->assertJsonFragment([ 'name' => $companies[1]->name ]);
+        $this->assertEquals($count, Company::count());
     }
 
     public function testCanUpdate()

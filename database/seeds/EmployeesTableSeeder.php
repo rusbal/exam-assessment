@@ -14,7 +14,10 @@ class EmployeesTableSeeder extends Seeder
         $employees = factory(App\Employee::class, 200)->create();
 
         foreach ($employees as $employee) {
-            $employee->companies()->save(App\Company::inRandomOrder()->first());
+            $companies = App\Company::inRandomOrder()->limit(rand(1, 7))->get();
+            foreach ($companies as $company) {
+                $employee->companies()->attach($company);
+            }
         }
     }
 }

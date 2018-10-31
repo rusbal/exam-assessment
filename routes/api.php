@@ -27,4 +27,5 @@ Route::group([ 'middleware' => 'api', 'prefix' => 'auth' ], function () {
 Route::group([ 'middleware' => 'auth:api' ], function () {
     Route::resource('companies', 'CompaniesController');
     Route::resource('employees', 'EmployeesController');
+    Route::post('exports', 'ExportsController@store');
 });

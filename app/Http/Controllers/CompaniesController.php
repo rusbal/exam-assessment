@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Company;
-use App\Http\Resources\Companies;
+use App\Http\Resources\Company as CompanyResource;
+use App\Http\Resources\CompanyCollection;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
 {
+    public function index()
+    {
+        $companies = new CompanyCollection(Company::all());
+        return response()->json($companies, 200);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -28,12 +35,12 @@ class CompaniesController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \App\Http\Resources\Companies
+     * @return \App\Http\Resources\Company
      */
     public function show($id)
     {
         $company = Company::find($id);
-        return new Companies($company);
+        return new CompanyResource($company);
     }
 
     /**
