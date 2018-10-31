@@ -1,5 +1,8 @@
 <?php
 
+use App\Company;
+use App\Employee;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        User::truncate();
+        Company::truncate();
+        Employee::truncate();
+
+        $this->call(UsersTableSeeder::class);
+        $this->call(CompaniesTableSeeder::class);
+        $this->call(EmployeesTableSeeder::class);
     }
 }
