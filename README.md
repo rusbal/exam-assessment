@@ -1,10 +1,10 @@
 # Assessment
 
 ## Screenshots
-![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen Shot 2018-11-01 at 12.08.08 AM.png")
-![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen Shot 2018-11-01 at 12.08.26 AM.png")
-![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen Shot 2018-11-01 at 12.08.38 AM.png")
-![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen Shot 2018-11-01 at 12.08.50 AM.png")
-![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen Shot 2018-11-01 at 12.15.42 AM.png")
+![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen_Shot_2018-11-01_at_12.08.08_AM.png")
+![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen_Shot_2018-11-01_at_12.08.26_AM.png")
+![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen_Shot_2018-11-01_at_12.08.38_AM.png")
+![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen_Shot_2018-11-01_at_12.08.50_AM.png")
+![alt text]("https://raw.githubusercontent.com/rusbal/exam-assessment/master/Screen_Shot_2018-11-01_at_12.15.42_AM.png")
 
 ## Remaining task: moving of code to package
